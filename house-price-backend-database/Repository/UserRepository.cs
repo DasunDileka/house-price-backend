@@ -24,7 +24,7 @@ namespace house_price_backend_database.Repository
             try
             {
                 var checkLogin = _context.Users
-                    .Where(e => e.EmailId == userLoginDTO.EmailID && e.Password == userLoginDTO.Password)
+                    .Where(e => e.Email == userLoginDTO.EmailID && e.Password == userLoginDTO.Password)
                     .FirstOrDefaultAsync();
 
                 return true;
@@ -40,11 +40,11 @@ namespace house_price_backend_database.Repository
             {
                 var users = new User()
                 {
-                    FirstName = userRegistrationDTO.FirstName,
-                    LastName = userRegistrationDTO.LastName,
-                    EmailId = userRegistrationDTO.EmailId,
-                    Address = userRegistrationDTO.Address,
-                    ContactNumber = userRegistrationDTO.ContactNumber,
+                    Name = userRegistrationDTO.Name,
+                    Email = userRegistrationDTO.Email,
+                    Password = userRegistrationDTO.Password,
+                    Contact = userRegistrationDTO.Contact,
+                    UserType = userRegistrationDTO.UserType,
 
                 };
                 _context.Users.Add(users);
