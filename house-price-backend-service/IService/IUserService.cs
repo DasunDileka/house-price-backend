@@ -10,7 +10,7 @@ namespace house_price_backend_service.IService
     public interface IUserService
     {
         Task<bool> UserRegistarion(UserRegistrationDTO userRegistrationDTO);
-        Task<bool> UserLogin(UserLoginDTO userLoginDTO);
+        Task<object> UserLogin(UserLoginDTO userLoginDTO);
 
     }
 }

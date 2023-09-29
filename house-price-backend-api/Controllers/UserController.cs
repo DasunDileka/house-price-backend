@@ -26,7 +26,13 @@ namespace house_price_backend_api.Controllers
         public async Task<IActionResult>UserLogin(UserLoginDTO userLoginDTO)
         {
             var result=await _userService.UserLogin(userLoginDTO);
-            return Ok();
+            if (result != null)
+            {
+                return Ok(result);
+            }
+            else
+
+                return NotFound();
         }
        
     }

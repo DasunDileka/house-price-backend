@@ -18,10 +18,10 @@ namespace house_price_backend_service.Service
             _userRepository = userRepository;
         }
 
-        public async Task<bool> UserLogin(UserLoginDTO userLoginDTO)
+        public async Task<object> UserLogin(UserLoginDTO userLoginDTO)
         {
             var UserLog = await _userRepository.UserLogin(userLoginDTO);
-            return true;
+            return UserLog;
         }
 
         public async Task<bool> UserRegistarion(UserRegistrationDTO userRegistrationDTO)
