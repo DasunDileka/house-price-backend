@@ -18,7 +18,7 @@ namespace house_price_backend_database.Model
         public int School { get; set; }
         public int ShappingMall { get; set; }
         public int Transport { get; set; }
-        public int Sate { get; set; }
+        public DateTime Date { get; set; }
         public int CurrencyRate { get; set; }
         public double Price { get; set; }
         public string? Link { get; set; }

@@ -25,9 +25,18 @@ namespace house_price_backend_database.Repository
                 var house = new HouseDetails()
                 {
                     Location = houseDetailsDTO.Location,
-                    NoOfBedRoomS = houseDetailsDTO.NoOfBedRoomS,
-                    NoOfBathRooms = houseDetailsDTO.NoOfBathRooms,
-                    LandSize = houseDetailsDTO.LandSize,
+                    NoOfBathRooms=houseDetailsDTO.NoOfBathRooms,
+                    NoOfBedRoomS=houseDetailsDTO.NoOfBedRoomS,
+                    LivingArea=houseDetailsDTO.LivingArea,
+                    LandArea=houseDetailsDTO.LandArea,
+                    floors=houseDetailsDTO.floors,
+                    School=houseDetailsDTO.School,
+                    ShappingMall=houseDetailsDTO.ShappingMall,
+                    Transport=houseDetailsDTO.Transport,
+                    Date=houseDetailsDTO.Date,
+                    CurrencyRate=houseDetailsDTO.CurrencyRate,
+                    Price=houseDetailsDTO.Price,
+                    Link=houseDetailsDTO.Link,
 
                 };
 
