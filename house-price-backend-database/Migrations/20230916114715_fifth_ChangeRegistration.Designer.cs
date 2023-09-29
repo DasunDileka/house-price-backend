@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using house_price_backend_database.Model;
 
@@ -10,9 +11,11 @@ using house_price_backend_database.Model;
 namespace house_price_backend_database.Migrations
 {
     [DbContext(typeof(HouseContext))]
-    partial class HouseContextModelSnapshot : ModelSnapshot
+    [Migration("20230916114715_fifth_ChangeRegistration")]
+    partial class fifth_ChangeRegistration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
