@@ -12,6 +12,16 @@ namespace house_price_backend_database.Model
         public string Location { get; set; }
         public int NoOfBedRoomS { get; set; }
         public int NoOfBathRooms { get; set; }
-        public decimal LandSize { get; set; }
+        public decimal LivingArea { get; set; }
+        public decimal LandArea { get; set; }
+        public int floors { get; set; }
+        public int School { get; set; }
+        public int ShappingMall { get; set; }
+        public int Transport { get; set; }
+        public int Sate { get; set; }
+        public int CurrencyRate { get; set; }
+        public double Price { get; set; }
+        public string? Link { get; set; }
+
     }
 }
