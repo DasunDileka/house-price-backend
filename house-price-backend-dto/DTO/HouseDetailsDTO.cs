@@ -8,7 +8,6 @@ namespace house_price_backend_dto.DTO
 {
     public class HouseDetailsDTO
     {
-        public int Id { get; set; }
         public string Location { get; set; }
         public int NoOfBedRoomS { get; set; }
         public int NoOfBathRooms { get; set; }
