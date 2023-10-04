@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace house_price_backend_dto.DTO
 {
-    public class HouseDetailsDTO
+    public class HouseDetailsSetDTO
     {
+        public int Id { get; set; }
         public string Location { get; set; }
         public int NoOfBedRooms { get; set; }
         public int NoOfBathRooms { get; set; }
@@ -21,6 +22,5 @@ namespace house_price_backend_dto.DTO
         public int CurrencyRate { get; set; }
         public double Price { get; set; }
         public string? Link { get; set; }
-
     }
 }

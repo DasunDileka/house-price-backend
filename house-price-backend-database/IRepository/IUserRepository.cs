@@ -10,6 +10,6 @@ namespace house_price_backend_database.IRepository
     public interface IUserRepository
     {
         Task<bool> UserRegistarion(UserRegistrationDTO userRegistrationDTO);
-        Task<bool> UserLogin(UserLoginDTO userLoginDTO);
+        Task<object> UserLogin(UserLoginDTO userLoginDTO);
     }
 }

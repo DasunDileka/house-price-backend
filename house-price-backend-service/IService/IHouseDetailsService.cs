@@ -10,6 +10,8 @@ namespace house_price_backend_service.IService
     public interface IHouseDetailsService
     {
         Task<bool> EnterHouseData(HouseDetailsDTO houseDetailsDTO);
+        Task<IEnumerable<HouseDetailsSetDTO>> GetHouseDetails();
+        Task<bool> UpdateHouseDetails(int Id, HouseDetailsDTO houseDetailsDTO);
 
     }
 }

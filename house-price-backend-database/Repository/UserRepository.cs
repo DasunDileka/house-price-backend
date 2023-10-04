@@ -19,15 +19,15 @@ namespace house_price_backend_database.Repository
             _context = context;
         }
 
-        public async Task<bool> UserLogin(UserLoginDTO userLoginDTO)
+        public async Task<object> UserLogin(UserLoginDTO userLoginDTO)
         {
             try
             {
-                var checkLogin = _context.Users
+                var checkLogin = await _context.Users
                     .Where(e => e.Email == userLoginDTO.EmailID && e.Password == userLoginDTO.Password)
                     .FirstOrDefaultAsync();
 
-                return true;
+                return checkLogin;
             }catch(Exception ex)
             {
                 throw ex;
