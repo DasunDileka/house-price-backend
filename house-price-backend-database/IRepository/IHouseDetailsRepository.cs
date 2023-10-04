@@ -10,5 +10,7 @@ namespace house_price_backend_database.IRepository
     public interface IHouseDetailsRepository
     {
         Task<bool> EnterHouseDetails(HouseDetailsDTO houseDetailsDTO);
+        Task<IEnumerable<HouseDetailsSetDTO>> GetHouseDetails();
+        Task<bool> UpdateHouseDetails(int Id,HouseDetailsDTO houseDetailsDTO);
     }
 }

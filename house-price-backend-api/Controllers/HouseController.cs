@@ -26,5 +26,23 @@ namespace house_price_backend_api.Controllers
             }
             return BadRequest();
         }
+
+        [HttpGet("GetHouseDetails")]
+        public async Task<IActionResult> GetHouse()
+        {
+            var result = await _houseDetailsService.GetHouseDetails();
+            return Ok(result);
+        }
+
+        [HttpPut("updateHouseDetails")]
+        public async Task<IActionResult> updateHouse(int Id, HouseDetailsDTO houseDetailsDTO)
+        {
+            var result = await _houseDetailsService.UpdateHouseDetails(Id, houseDetailsDTO);
+            if(result==true)
+            {
+                return Ok();
+            }
+            return BadRequest();
+        }
     }
 }

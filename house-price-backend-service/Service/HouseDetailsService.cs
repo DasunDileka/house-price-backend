@@ -24,5 +24,17 @@ namespace house_price_backend_service.Service
             var houseData=await _houseDetailsRepository.EnterHouseDetails(houseDetailsDTO);
             return houseData;
         }
+
+        public async Task<IEnumerable<HouseDetailsSetDTO>> GetHouseDetails()
+        {
+            var gethouse = await _houseDetailsRepository.GetHouseDetails();
+            return gethouse;
+        }
+
+        public async Task<bool> UpdateHouseDetails(int Id, HouseDetailsDTO houseDetailsDTO)
+        {
+            var updatehouse=await _houseDetailsRepository.UpdateHouseDetails(Id, houseDetailsDTO);
+            return updatehouse;
+        }
     }
 }

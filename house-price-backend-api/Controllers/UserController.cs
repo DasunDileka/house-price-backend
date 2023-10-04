@@ -34,6 +34,7 @@ namespace house_price_backend_api.Controllers
 
                 return NotFound();
         }
-       
+   
+
     }
 }
