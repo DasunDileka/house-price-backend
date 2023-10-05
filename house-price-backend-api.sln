@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "house-price-backend-api", "house-price-backend-api\house-price-backend-api.csproj", "{E77BDE76-2D5A-45FC-8702-5FEFD9D8A206}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "house-price-backend-api", "house-price-backend-api\house-price-backend-api.csproj", "{E77BDE76-2D5A-45FC-8702-5FEFD9D8A206}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "house-price-backend-service", "house-price-backend-service\house-price-backend-service.csproj", "{54E161CF-F3D8-4021-ACF8-66E022895224}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "house-price-backend-service", "house-price-backend-service\house-price-backend-service.csproj", "{54E161CF-F3D8-4021-ACF8-66E022895224}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "house-price-backend-dto", "house-price-backend-dto\house-price-backend-dto.csproj", "{E69BE2F8-F7D8-4DE1-ACC4-3BD99D655638}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "house-price-backend-dto", "house-price-backend-dto\house-price-backend-dto.csproj", "{E69BE2F8-F7D8-4DE1-ACC4-3BD99D655638}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "house-price-backend-database", "house-price-backend-database\house-price-backend-database.csproj", "{539AEF41-C7D4-4F7B-B964-11D974E128B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "house-price-backend-database", "house-price-backend-database\house-price-backend-database.csproj", "{539AEF41-C7D4-4F7B-B964-11D974E128B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "house-price-unit-testing", "house-price-unit-testing\house-price-unit-testing.csproj", "{F1505AD2-5686-4CE1-B94A-30FA2E310E84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{539AEF41-C7D4-4F7B-B964-11D974E128B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{539AEF41-C7D4-4F7B-B964-11D974E128B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{539AEF41-C7D4-4F7B-B964-11D974E128B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1505AD2-5686-4CE1-B94A-30FA2E310E84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1505AD2-5686-4CE1-B94A-30FA2E310E84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1505AD2-5686-4CE1-B94A-30FA2E310E84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1505AD2-5686-4CE1-B94A-30FA2E310E84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

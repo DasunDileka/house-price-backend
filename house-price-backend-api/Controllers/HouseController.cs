@@ -22,7 +22,7 @@ namespace house_price_backend_api.Controllers
             var result = await _houseDetailsService.EnterHouseData(houseDetailsDTO);
             if(result==true)
             {
-                return Ok();
+                return Ok(result);
             }
             return BadRequest();
         }
@@ -31,6 +31,11 @@ namespace house_price_backend_api.Controllers
         public async Task<IActionResult> GetHouse()
         {
             var result = await _houseDetailsService.GetHouseDetails();
+            if (result == null)
+            {
+                return NotFound();
+            }
+
             return Ok(result);
         }
 
@@ -40,7 +45,7 @@ namespace house_price_backend_api.Controllers
             var result = await _houseDetailsService.UpdateHouseDetails(Id, houseDetailsDTO);
             if(result==true)
             {
-                return Ok();
+                return Ok(result);
             }
             return BadRequest();
         }
