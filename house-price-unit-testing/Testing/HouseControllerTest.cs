@@ -142,15 +142,7 @@ namespace house_price_unit_testing.Testing
                 Link="www.houce.lk"
                
             };
-           // _houseDetailsServiceMock.Setup(s => s.UpdateHouseDetails(Id,SuccessfulHouses).ReturnsAsync("Sucessfully Updated");
-
-           // var resultSuccess = _houseController.updateHouse(GetHouses);
-           // var resultExisting = _houseController.updateHouse()
-
-            //Assert.IsInstanceOf<OkObjectResult>(resultSuccess.Result);
-            //var okResultS = (OkObjectResult)resultSuccess.Result;
-            //Assert.AreEqual(200, okResultS.StatusCode);
-            //Assert.IsInstanceOf<OkObjectResult>(resultExisting.Result);
+ 
         }
 
 

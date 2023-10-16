@@ -3,6 +3,7 @@ using house_price_backend_service.IService;
 using house_price_backend_service.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace house_price_backend_api.Controllers
 {
@@ -48,6 +49,42 @@ namespace house_price_backend_api.Controllers
                 return Ok(result);
             }
             return BadRequest();
+        }
+        [HttpPost("UploadImage")]
+        public async Task<IActionResult> UploadImage(IFormFile formFile, string location, int numberOfBedrooms, int numberOfBathrooms,decimal livingAreaSize, decimal landSize, decimal price, int contact)
+        {
+
+            try
+            {
+                var responce = await _houseDetailsService.UploadFile(formFile, location,numberOfBedrooms,numberOfBathrooms,livingAreaSize,landSize,price, contact);
+                if(responce==true)
+                {
+                    return Ok(responce);
+                }
+                return BadRequest();
+
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+        }
+        [HttpGet("GetImages")]
+        public async Task<IActionResult> GetAllImages()
+        {
+
+            try
+            {
+                var responce = await _houseDetailsService.GetFile();              
+                return Ok(responce);
+
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
         }
     }
 }

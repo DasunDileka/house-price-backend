@@ -1,7 +1,9 @@
 ﻿using house_price_backend_database.IRepository;
 using house_price_backend_database.Model;
 using house_price_backend_dto.DTO;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Web.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -51,6 +53,7 @@ namespace house_price_backend_database.Repository
             }
 
         }
+
 
         public async Task<IEnumerable<HouseDetailsSetDTO>> GetHouseDetails()
         {
@@ -113,5 +116,66 @@ namespace house_price_backend_database.Repository
                 throw ex;
             }
         }
+
+        public async Task<bool> UploadFile(IFormFile file, string location, int numberOfBedrooms, int numberOfBathrooms, decimal livingAreaSize, decimal landSize, decimal price, int contact)
+        {
+            try
+            {
+                if (file == null || file.Length == 0)
+                {
+                    return false;
+                }
+
+                using (var memoryStream = new MemoryStream())
+                {
+                    await file.CopyToAsync(memoryStream);
+                    var fileData = memoryStream.ToArray();
+
+                    var fileUpload = new Image
+                    {
+                        location = location,
+                        numberOfBathrooms = numberOfBathrooms,
+                        numberOfBedrooms = numberOfBedrooms,
+                        livingAreaSize = livingAreaSize,
+                        landSize = landSize,
+                        contact=contact,
+                        price = price,
+                        image = fileData
+                    };
+
+                    _context.Images.Add(fileUpload);
+                    await _context.SaveChangesAsync();
+
+                    return true;
+                }
+            }catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<List<AddImage>> GetFile()
+        {
+
+            var data = await _context
+                .Images
+                .Select(e=>new AddImage
+                {
+                    location=e.location,
+                    numberOfBathrooms=e.numberOfBathrooms,
+                    numberOfBedrooms=e.numberOfBedrooms,
+                    livingAreaSize=e.livingAreaSize,
+                    landSize=e.landSize,
+                    contact = e.contact,
+                    price = e.price,             
+                    image= Convert.ToBase64String(e.image)
+
+                }).
+                ToListAsync();   
+
+          return data;
+
+        }
+
     }
 }
