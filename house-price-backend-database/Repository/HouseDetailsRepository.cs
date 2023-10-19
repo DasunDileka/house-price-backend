@@ -117,7 +117,7 @@ namespace house_price_backend_database.Repository
             }
         }
 
-        public async Task<bool> UploadFile(IFormFile file, string location, int numberOfBedrooms, int numberOfBathrooms, decimal livingAreaSize, decimal landSize, decimal price, int contact)
+        public async Task<bool> UploadFile(IFormFile file, string location, int numberOfBedrooms, int numberOfBathrooms, decimal livingAreaSize, decimal landSize, decimal price, int contact, int userId)
         {
             try
             {
@@ -131,6 +131,8 @@ namespace house_price_backend_database.Repository
                     await file.CopyToAsync(memoryStream);
                     var fileData = memoryStream.ToArray();
 
+                    var Id = _context.Users.Where(e => e.Id == userId).FirstOrDefault();
+
                     var fileUpload = new Image
                     {
                         location = location,
@@ -138,9 +140,11 @@ namespace house_price_backend_database.Repository
                         numberOfBedrooms = numberOfBedrooms,
                         livingAreaSize = livingAreaSize,
                         landSize = landSize,
-                        contact=contact,
+                        contact = contact,
                         price = price,
-                        image = fileData
+                        image = fileData,
+                        User = Id
+
                     };
 
                     _context.Images.Add(fileUpload);

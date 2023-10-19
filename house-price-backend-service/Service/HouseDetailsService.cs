@@ -38,9 +38,9 @@ namespace house_price_backend_service.Service
             return updatehouse;
         }
 
-        public async Task<bool> UploadFile(IFormFile file, string location, int numberOfBedrooms, int numberOfBathrooms, decimal livingAreaSize, decimal landSize, decimal price,int contact)
+        public async Task<bool> UploadFile(IFormFile file, string location, int numberOfBedrooms, int numberOfBathrooms, decimal livingAreaSize, decimal landSize, decimal price,int contact,int userId)
         {
-            var updatehouse = await _houseDetailsRepository.UploadFile(file, location, numberOfBedrooms, numberOfBathrooms, livingAreaSize, landSize, price, contact);
+            var updatehouse = await _houseDetailsRepository.UploadFile(file, location, numberOfBedrooms, numberOfBathrooms, livingAreaSize, landSize, price, contact, userId);
             return updatehouse;
         }
         public Task<List<AddImage>> GetFile()

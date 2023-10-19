@@ -14,5 +14,7 @@ namespace house_price_backend_database.Model
         public string Password { get; set; }
         public string Contact { get; set; }
         public string UserType { get; set; }
+        public virtual ICollection<Review> Reviews { get; set; }
+        public virtual ICollection<Image>? Images { get; set; }
     }
 }

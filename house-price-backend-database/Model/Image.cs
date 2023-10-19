@@ -17,5 +17,6 @@ namespace house_price_backend_database.Model
         public decimal price { get; set; }
         public int contact { get; set; }
         public byte[]? image { get; set; }
+        public virtual User? User { get; set; }
     }
 }
